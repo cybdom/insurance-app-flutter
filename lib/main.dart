@@ -11,18 +11,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
-          headline: TextStyle(
+          headlineSmall: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
-          subhead: TextStyle(color: Colors.white54),
-          body1: TextStyle(color: Colors.white54),
-          subtitle: TextStyle(
+          titleMedium: TextStyle(color: Colors.white54),
+          bodyMedium: TextStyle(color: Colors.white54),
+          titleSmall: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 17,
           ),
-          title: TextStyle(
+          titleLarge: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 19,
@@ -63,7 +63,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                           child: CircleAvatar(
                             backgroundImage: NetworkImage(
-                              "https://media.licdn.com/dms/image/C4D03AQHHbvYjNiR49w/profile-displayphoto-shrink_100_100/0?e=1567641600&v=beta&t=qjaJ_J2KnplnSfMMVypYfN--eza4YyFpIKd8N6FF24A",
+                              "https://media.licdn.com/dms/image/D4E03AQGws1C3Vrb1xQ/profile-displayphoto-shrink_400_400/0/1688551998300?e=1710374400&v=beta&t=1LZlN4gDgHgBVzk865S4XXgX4PJJ2EolNrPIS55d3H8",
                             ),
                           ),
                         ),
@@ -73,11 +73,11 @@ class MyHomePage extends StatelessWidget {
                           children: <Widget>[
                             Text(
                               "Hey, Amazigh!",
-                              style: Theme.of(context).textTheme.title,
+                              style: Theme.of(context).textTheme.titleLarge,
                             ),
                             Text(
                               "Let's plan your bright future!",
-                              style: Theme.of(context).textTheme.subhead,
+                              style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ],
                         ),
@@ -102,7 +102,7 @@ class MyHomePage extends StatelessWidget {
                           children: <Widget>[
                             Text(
                               "01234567-890",
-                              style: Theme.of(context).textTheme.headline,
+                              style: Theme.of(context).textTheme.headlineSmall,
                             ),
                             SizedBox(height: 5.0),
                             Container(
@@ -147,15 +147,15 @@ class MyHomePage extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           "\$1,231",
-                          style: Theme.of(context).textTheme.subtitle,
+                          style: Theme.of(context).textTheme.titleSmall,
                         ),
                         Text(
                           "\$3,231",
-                          style: Theme.of(context).textTheme.subtitle,
+                          style: Theme.of(context).textTheme.titleSmall,
                         ),
                         Text(
                           "05/07/2019",
-                          style: Theme.of(context).textTheme.subtitle,
+                          style: Theme.of(context).textTheme.titleSmall,
                         ),
                       ],
                     ),
@@ -169,7 +169,7 @@ class MyHomePage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        FlatButton(
+                        TextButton(
                           child: Row(
                             children: <Widget>[
                               Icon(
@@ -196,7 +196,7 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        FlatButton(
+                        TextButton(
                           child: Row(
                             children: <Widget>[
                               Text(
@@ -275,7 +275,7 @@ class MyHomePage extends StatelessWidget {
                                     color: Colors.black87,
                                   ),
                                 ),
-                                FlatButton(
+                                TextButton(
                                   child: Text(
                                     "See All",
                                     style: TextStyle(
@@ -349,8 +349,9 @@ class MyHomePage extends StatelessWidget {
 class MyIconButton extends StatelessWidget {
   final String buttonText;
   final IconData buttonIcon;
-  const MyIconButton({Key key, this.buttonText, this.buttonIcon})
-      : super(key: key);
+
+  const MyIconButton(
+      {super.key, required this.buttonText, required this.buttonIcon});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -364,7 +365,7 @@ class MyIconButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(5.0),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey[400],
+                  color: Colors.grey.shade400,
                   blurRadius: 3.0,
                 ),
               ],
